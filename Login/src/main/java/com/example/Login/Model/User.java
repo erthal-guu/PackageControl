@@ -25,12 +25,14 @@ public class User {
     @Column(nullable = false, length = 100)
     private String name;
 
+    @CPF(message = "CPF inválido")
     @NotBlank(message = "CPF é obrigatório")
     @Column(nullable = false, unique = true, length = 15)
     private String cpf;
 
     @NotBlank(message = "Senha é obrigatória")
     @Size(min = 6, message = "A senha deve ter pelo menos 6 caracteres")
+    @Column(nullable = false)
     private String senha;
 
     @Column(name = "data_criacao", updatable = false)

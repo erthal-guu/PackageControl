@@ -1,15 +1,3 @@
-
-document.getElementById("cpf").addEventListener("input", function () {
-    let cpf = this.value.replace(/\D/g, "");
-
-    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-    cpf = cpf.replace(/(\d{3})(\d)/, "$1-$2");
-
-    this.value = cpf;
-});
-
-
 function ObterRequisicao() {
 
     document.getElementById("formCadastro").addEventListener("submit", function (e) {
@@ -28,7 +16,17 @@ function ObterRequisicao() {
             },
             body: JSON.stringify(dados)
         })
-        .then(response => response.json())
+        .then(async response => {
+
+            // Se der erro (400, 404, 500 etc)
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                alert("CPF já cadastrado no sistema");
+                throw new Error(errorMessage);
+            }
+
+            return response.json();
+        })
         .then(data => {
             alert("Usuário cadastrado com sucesso! ID: " + data.id);
 
@@ -37,8 +35,7 @@ function ObterRequisicao() {
             document.getElementById("senha").value = "";
         })
         .catch(error => {
-            alert("Erro ao cadastrar: " + error);
+            console.error(error);
         });
     });
 }
-

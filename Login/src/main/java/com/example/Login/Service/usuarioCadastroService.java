@@ -15,7 +15,6 @@ public class usuarioCadastroService {
         if (repository.existsByCpf(usuario.getCpf())) {
             throw new RuntimeException("CPF já cadastrado!");
         }
-
         return repository.save(usuario);
     }
 }

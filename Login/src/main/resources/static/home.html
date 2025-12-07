@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gerenciador de Encomendas - Condomínio</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <h1>📦 Gerenciador de Encomendas</h1>
+    <div class="header-user">
+        <span>João Silva - Apto 301</span>
+        <div class="user-avatar">JS</div>
+    </div>
+</header>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h2>Bem-vindo de volta, João!</h2>
+        <p>Acompanhe suas encomendas e gerencie suas notificações</p>
+    </div>
+
+    <!-- Dashboard Stats -->
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📬</div>
+            <div class="stat-label">Encomendas Pendentes</div>
+            <p class="stat-value">5</p>
+            <div class="stat-info">Aguardando retirada</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-label">Entregues Este Mês</div>
+            <p class="stat-value">12</p>
+            <div class="stat-info">Últimos 30 dias</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">⏰</div>
+            <div class="stat-label">Atrasadas</div>
+            <p class="stat-value">1</p>
+            <div class="stat-info">Mais de 7 dias</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <div class="stat-label">Total de Encomendas</div>
+            <p class="stat-value">28</p>
+            <div class="stat-info">Desde o início</div>
+        </div>
+    </div>
+
+    <!-- Packages Table -->
+    <div class="table-section">
+        <h3>Minhas Encomendas Recentes</h3>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar por rastreamento, remetente...">
+            <button class="btn secondary small">Filtrar</button>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Rastreamento</th>
+                <th>Remetente</th>
+                <th>Data Recebimento</th>
+                <th>Status</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>#PKG-2025-001</td>
+                <td>Amazon Brasil</td>
+                <td>12/07/2025</td>
+                <td><span class="badge pending">Pendente</span></td>
+                <td><button class="btn small">Detalhes</button></td>
+            </tr>
+            <tr>
+                <td>#PKG-2025-002</td>
+                <td>MercadoLivre</td>
+                <td>11/07/2025</td>
+                <td><span class="badge pending">Pendente</span></td>
+                <td><button class="btn small">Detalhes</button></td>
+            </tr>
+            <tr>
+                <td>#PKG-2025-003</td>
+                <td>Shopee</td>
+                <td>08/07/2025</td>
+                <td><span class="badge delivered">Entregue</span></td>
+                <td><button class="btn secondary small">Detalhes</button></td>
+            </tr>
+            <tr>
+                <td>#PKG-2025-004</td>
+                <td>Aliexpress</td>
+                <td>05/07/2025</td>
+                <td><span class="badge delivered">Entregue</span></td>
+                <td><button class="btn secondary small">Detalhes</button></td>
+            </tr>
+            <tr>
+                <td>#PKG-2025-005</td>
+                <td>OLX</td>
+                <td>01/07/2025</td>
+                <td><span class="badge failed">Não Entregue</span></td>
+                <td><button class="btn small">Detalhes</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -7,8 +7,21 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class usuarioLoginService {
+
     @Autowired
     private usuarioLoginRepository repository;
-        // public User authenticate(String cpf, String SenhaUser)
 
+    public User verificarLogin(String cpf, String senhaUser) {
+
+        User usuario = repository.findByCpf(cpf);
+
+        if (usuario == null) {
+            return null;
+        }
+        if (!usuario.getSenha().equals(senhaUser)) {
+            return null;
+        }
+
+        return usuario;
+    }
 }
